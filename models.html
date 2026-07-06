@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive biological model playground for almejarav.xyz.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta property="og:site_name" content="almejarav.xyz">
+  <meta property="og:title" content="Models | Alejandro Aravena Lazo">
+  <meta property="og:description" content="A temporarily unlinked draft page for browser-based biological model sketches.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://almejarav.xyz/models.html">
+  <meta property="og:image" content="https://almejarav.xyz/assets/img/og-card.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Models | Alejandro Aravena Lazo">
+  <meta name="twitter:description" content="A temporarily unlinked draft page for browser-based biological model sketches.">
+  <meta name="twitter:image" content="https://almejarav.xyz/assets/img/og-card.svg">
+  <title>Models | Alejandro Aravena Lazo</title>
+  <link rel="canonical" href="https://almejarav.xyz/models.html">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/terminal.css">
+  <link rel="stylesheet" href="/src/styles/simulations.css">
+  <script type="module" src="/src/app.ts"></script>
+</head>
+<body class="page-interior">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand-block">
+        <p class="eyebrow">almejarav.xyz</p>
+        <h1>Alejandro Aravena Lazo</h1>
+        <p class="site-tagline">complex biological systems · synthetic circuits · collective behavior</p>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="research.html">research</a></li>
+          <li><a href="projects.html">projects</a></li>
+          <li><a href="notes.html">notes</a></li>
+          <li><a href="teaching.html">teaching</a></li>
+          <li><a href="cv.html">cv</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" class="page-main">
+      <article class="page-card card">
+        <p class="section-label">Models</p>
+        <h2>Interactive playground index</h2>
+        <p>
+          These browser models are meant to support intuition for switching,
+          signaling, pattern formation, and collective biological behavior.
+          The homepage keeps the full tabbed version inside the floating terminal;
+          this standalone page mirrors the same model index in a simpler layout.
+        </p>
+        <p>
+          This page is currently unlinked from the main public navigation while the
+          site prioritizes core profile, research, projects, notes, teaching, CV,
+          and contact content.
+        </p>
+        <p class="model-playground-note">
+          <strong>Important:</strong> these models are qualitative browser
+          sketches meant to make collective behavior intuitive. They are not
+          replacements for calibrated scientific simulation code.
+        </p>
+        <div class="model-preview-layout">
+          <section class="model-preview-copy">
+            <h3>Toggle lattice preview</h3>
+            <p>
+              The first implemented model is the toggle lattice: a coarse,
+              GFP/RFP-like switching field that emphasizes local coupling,
+              stochasticity, and domain formation.
+            </p>
+            <p>
+              Other entries remain intentionally marked as planned until their
+              browser implementations are ready.
+            </p>
+          </section>
+          <div class="model-preview-frame">
+            <canvas
+              class="model-preview-canvas"
+              data-model-preview
+              width="480"
+              height="260"
+              aria-label="Animated qualitative toggle lattice preview"
+            ></canvas>
+          </div>
+        </div>
+        <div class="model-grid" data-models-list aria-live="polite"></div>
+        <p class="content-fallback" data-content-fallback>
+          The model index loads from <code>assets/data/models.json</code> when
+          static file requests are available. If you opened this page from
+          <code>file://</code>, use a simple local server to load the structured
+          model cards.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>Reserved for accessible, lightweight browser simulations.</p>
+      <p>&copy; <span data-current-year>2026</span> Alejandro Aravena Lazo</p>
+    </footer>
+  </div>
+</body>
+</html>

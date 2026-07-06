@@ -1,0 +1,54 @@
+[
+  {
+    "command": "?",
+    "description": "Show available commands."
+  },
+  {
+    "command": "home",
+    "description": "Switch to the homepage tab."
+  },
+  {
+    "command": "about",
+    "description": "Switch to the profile and background tab."
+  },
+  {
+    "command": "projects",
+    "description": "Switch to selected projects and portfolio work."
+  },
+  {
+    "command": "research",
+    "description": "Switch to research interests and statement."
+  },
+  {
+    "command": "models",
+    "description": "Switch to the model playground tab."
+  },
+  {
+    "command": "model toggle",
+    "description": "Activate the GFP/RFP-like toggle lattice."
+  },
+  {
+    "command": "model flock",
+    "description": "Activate the three-population Vicsek flock field."
+  },
+  {
+    "command": "model quorum",
+    "description": "Activate the quorum-sensing model placeholder."
+  },
+  {
+    "command": "perturb",
+    "description": "Perturb the active simulation."
+  },
+  {
+    "command": "reset",
+    "description": "Reset the active simulation."
+  },
+  {
+    "command": "cv",
+    "description": "Show CV download links."
+  },
+  {
+    "command": "contact",
+    "description": "Show contact links."
+  }
+]

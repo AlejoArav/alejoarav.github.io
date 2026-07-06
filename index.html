@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Alejandro Aravena Lazo studies complex biological systems, synthetic circuits, and collective behavior.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:site_name" content="almejarav.xyz">
+  <meta property="og:title" content="Alejandro Aravena Lazo | almejarav.xyz">
+  <meta property="og:description" content="Computational biology, synthetic biology, mathematical modeling, and collective biological behavior in a terminal-like digital garden.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://almejarav.xyz/">
+  <meta property="og:image" content="https://almejarav.xyz/assets/img/og-card.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Alejandro Aravena Lazo | almejarav.xyz">
+  <meta name="twitter:description" content="Computational biology, synthetic biology, mathematical modeling, and collective biological behavior in a terminal-like digital garden.">
+  <meta name="twitter:image" content="https://almejarav.xyz/assets/img/og-card.svg">
+  <title>Alejandro Aravena Lazo | almejarav.xyz</title>
+  <link rel="canonical" href="https://almejarav.xyz/">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/terminal.css">
+  <link rel="stylesheet" href="/src/styles/simulations.css">
+  <script type="module" src="/src/app.ts"></script>
+</head>
+<body class="page-home">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <p class="visually-hidden" id="simulation-description">
+    A decorative collective-motion background simulation runs behind the terminal window.
+    It does not contain essential information and the site remains usable without it.
+  </p>
+  <div class="site-background" data-simulation-surface aria-hidden="true">
+    <canvas class="simulation-canvas" data-simulation-canvas></canvas>
+    <div class="site-background-wash"></div>
+  </div>
+
+  <div class="site-shell">
+    <main id="main-content" class="terminal-stage">
+      <section class="terminal-window" data-window-root>
+        <header class="window-chrome" data-window-drag-handle>
+          <div class="chrome-lights" aria-label="Window controls">
+            <button class="light light-close" type="button" data-window-close aria-label="Reload window"></button>
+            <button class="light light-minimize" type="button" data-window-minimize aria-controls="window-layout" aria-expanded="true" aria-label="Minimize window"></button>
+            <button class="light light-maximize" type="button" data-window-maximize aria-pressed="false" aria-label="Maximize window"></button>
+          </div>
+          <div class="chrome-title">
+            <span data-active-tab-label>home</span>
+            <span class="chrome-separator">✣</span>
+            <span>almejarav.xyz</span>
+          </div>
+          <div class="chrome-draghint">drag window</div>
+        </header>
+
+        <div class="window-layout" id="window-layout">
+          <aside class="window-sidebar">
+            <nav class="window-nav" aria-label="Section tabs">
+              <a class="window-nav-link is-active" href="#tab-home" data-tab-link data-tab-target="home" aria-current="page">home</a>
+              <a class="window-nav-link" href="#tab-about" data-tab-link data-tab-target="about">about</a>
+              <a class="window-nav-link" href="#tab-research" data-tab-link data-tab-target="research">research</a>
+              <a class="window-nav-link" href="#tab-projects" data-tab-link data-tab-target="projects">projects</a>
+              <a class="window-nav-link" href="#tab-notes" data-tab-link data-tab-target="notes">notes</a>
+              <a class="window-nav-link" href="#tab-teaching" data-tab-link data-tab-target="teaching">teaching</a>
+              <a class="window-nav-link" href="#tab-cv" data-tab-link data-tab-target="cv">cv</a>
+              <a class="window-nav-link" href="#tab-contact" data-tab-link data-tab-target="contact">contact</a>
+            </nav>
+
+            <div class="sidebar-meta">
+              <p class="eyebrow">background</p>
+              <p class="sidebar-status">active model: <span data-model-status>vicsek flock</span></p>
+              <p class="sidebar-copy">continuous flock simulation starts on load and remains behind the shell.</p>
+            </div>
+          </aside>
+
+          <section class="window-content" aria-label="Terminal content">
+            <article class="tab-panel is-active" id="tab-home" data-tab-panel data-tab-name="home">
+              <div class="panel-header">
+                <p class="panel-kicker">home.tab</p>
+              </div>
+              <h1 class="display-wordmark" aria-label="Alejandro Aravena">Alejandro<br>Aravena</h1>
+              <p class="lead">
+                computational biology · synthetic biology · mathematical modeling
+              </p>
+              <p>
+                I study how biological entities switch, communicate, synchronize,
+                compete, and form patterns - from genetic circuits to bacterial colonies.
+              </p>
+              <p>
+                This homepage now behaves more like a compact floating terminal:
+                smaller on the page, tab-driven, command-driven, and visually
+                suspended over a living collective-motion background.
+              </p>
+            </article>
+
+            <article class="tab-panel" id="tab-about" data-tab-panel data-tab-name="about">
+              <div class="panel-header">
+                <p class="panel-kicker">about.tab</p>
+                <h2>Scientific profile</h2>
+              </div>
+              <div class="tab-section">
+                <p>
+                  Alejandro Aravena Lazo is a computational and synthetic biologist
+                  interested in how biological systems switch, communicate, compete,
+                  and form spatial structure.
+                </p>
+                <p>
+                  His background bridges biological sciences and
+                  biological/medical engineering, with research interests that connect
+                  mathematical modeling, collective behavior, microscopy analysis, and
+                  open scientific tools.
+                </p>
+                <p>
+                  This website is a public-facing digital garden for those overlapping
+                  themes: gene circuits, stochastic spatial models, reaction-diffusion
+                  intuition, distributed computation in biology, and scientific
+                  communication that remains accessible beyond a narrow specialist
+                  audience.
+                </p>
+              </div>
+            </article>
+
+            <article class="tab-panel" id="tab-research" data-tab-panel data-tab-name="research">
+              <div class="panel-header">
+                <p class="panel-kicker">research.tab</p>
+                <h2>Complex systems across scales</h2>
+              </div>
+              <div class="tab-section">
+                <p>
+                  The current research direction centers on collective dynamics in
+                  biological systems: how local interactions, nonlinear regulation, and
+                  noise generate structure at the population level.
+                </p>
+                <div class="focus-grid">
+                  <section class="focus-block">
+                    <h3>Current research focus</h3>
+                    <p>
+                      Building interpretable models for switching, signaling, and
+                      pattern formation in biological systems that span from gene
+                      circuits to bacterial populations.
+                    </p>
+                  </section>
+                  <section class="focus-block">
+                    <h3>Synthetic gene circuits</h3>
+                    <p>
+                      Exploring engineered regulatory motifs, optogenetic control, and
+                      how circuit architecture shapes robustness, noise, and
+                      experimentally observable dynamics.
+                    </p>
+                  </section>
+                  <section class="focus-block">
+                    <h3>Collective behavior and pattern formation</h3>
+                    <p>
+                      Investigating quorum sensing, stochastic lattices, Ising-like
+                      spatial order, reaction-diffusion intuition, and other routes to
+                      emergent population-scale organization.
+                    </p>
+                  </section>
+                  <section class="focus-block">
+                    <h3>Mathematical modeling and inference</h3>
+                    <p>
+                      Using coarse-grained dynamical systems, stochastic simulation, and
+                      inference-minded modeling to connect theory with measurable
+                      biological behavior.
+                    </p>
+                  </section>
+                  <section class="focus-block">
+                    <h3>Microscopy and data analysis</h3>
+                    <p>
+                      Developing reproducible workflows for image processing,
+                      segmentation, quantification, and data interpretation in
+                      microscopy-heavy biological experiments.
+                    </p>
+                  </section>
+                </div>
+              </div>
+            </article>
+
+            <article class="tab-panel" id="tab-projects" data-tab-panel data-tab-name="projects">
+              <div class="panel-header">
+                <p class="panel-kicker">projects.tab</p>
+                <h2>Selected work</h2>
+              </div>
+              <div class="tab-section">
+                <p>
+                  These projects connect stochastic modeling, synthetic gene circuits,
+                  microscopy analysis, and public-facing biotechnology education. The
+                  cards below are rendered from structured data in
+                  <code>assets/data/projects.json</code>.
+                </p>
+                <div class="content-grid" data-projects-list aria-live="polite"></div>
+                <p class="content-fallback" data-content-fallback>
+                  Project cards load from a local JSON file when JavaScript and static
+                  file requests are available. If you opened this page directly from the
+                  filesystem, use a simple local server to preview the rendered cards.
+                </p>
+              </div>
+            </article>
+
+            <article class="tab-panel" id="tab-notes" data-tab-panel data-tab-name="notes">
+              <div class="panel-header">
+                <p class="panel-kicker">notes.tab</p>
+                <h2>Digital garden and scientific notes</h2>
+              </div>
+              <div class="tab-section">
+                <p>
+                  These short notes are meant to be accessible scientific explanations:
+                  compact enough for a digital garden, but precise enough to support
+                  teaching, collaboration, and public communication.
+                </p>
+                <div class="content-grid" data-notes-list aria-live="polite"></div>
+                <p class="content-fallback" data-content-fallback>
+                  Notes load from <code>assets/data/notes.json</code> when JavaScript and
+                  static file requests are available. If you opened the page directly
+                  from disk, use a simple local server to preview the rendered cards.
+                </p>
+              </div>
+            </article>
+
+            <article class="tab-panel" id="tab-teaching" data-tab-panel data-tab-name="teaching">
+              <div class="panel-header">
+                <p class="panel-kicker">teaching.tab</p>
+                <h2>Teaching and workshop areas</h2>
+              </div>
+              <div class="focus-grid">
+                <section class="focus-block">
+                  <h3>Synthetic biology</h3>
+                  <p>
+                    Introductory and intermediate material for genetic circuits,
+                    regulatory logic, and model-guided experimental thinking.
+                  </p>
+                </section>
+                <section class="focus-block">
+                  <h3>Molecular genetics and biochemistry lab</h3>
+                  <p>
+                    Laboratory-oriented teaching that connects hands-on molecular
+                    biology practice with quantitative reasoning and experimental
+                    design.
+                  </p>
+                </section>
+                <section class="focus-block">
+                  <h3>Computational modeling notebooks</h3>
+                  <p>
+                    Public notebooks and small simulations meant to explain dynamical
+                    systems, stochasticity, and spatial models in biologically
+                    grounded terms.
+                  </p>
+                </section>
+                <section class="focus-block">
+                  <h3>Open technologies and molecular biology education</h3>
+                  <p>
+                    Accessible educational resources that lower barriers to
+                    experimentation, data analysis, and scientific communication.
+                  </p>
+                </section>
+              </div>
+            </article>
+
+            <article class="tab-panel" id="tab-cv" data-tab-panel data-tab-name="cv">
+              <div class="panel-header">
+                <p class="panel-kicker">cv.tab</p>
+                <h2>Public-safe curriculum vitae</h2>
+              </div>
+              <p>
+                Public CV files will be added only after they have been checked for
+                safety. No private address, phone number, or unpublished sensitive
+                information should appear in any file stored under
+                <code>assets/cv/</code>.
+              </p>
+              <div class="resource-grid">
+                <section class="resource-card">
+                  <h3>Academic CV</h3>
+                  <p>Formal research-facing version for academic applications, collaborations, and conferences.</p>
+                  <p class="resource-state">coming soon</p>
+                </section>
+                <section class="resource-card">
+                  <h3>Industry / Data CV</h3>
+                  <p>Version oriented toward applied research, data-intensive roles, and scientific technology work.</p>
+                  <p class="resource-state">coming soon</p>
+                </section>
+                <section class="resource-card">
+                  <h3>Computational Biology / AI CV</h3>
+                  <p>Focused summary for roles involving biological modeling, data analysis, and computational methods.</p>
+                  <p class="resource-state">coming soon</p>
+                </section>
+              </div>
+            </article>
+
+            <article class="tab-panel" id="tab-contact" data-tab-panel data-tab-name="contact">
+              <div class="panel-header">
+                <p class="panel-kicker">contact.tab</p>
+                <h2>Contact channels</h2>
+              </div>
+              <p>
+                This site keeps contact simple and public-safe. Replace the placeholder
+                links below with confirmed public profiles when available.
+              </p>
+              <ul class="link-list">
+                <li><a href="mailto:research@example.com">email placeholder</a></li>
+                <li><a href="https://github.com/" rel="noreferrer">GitHub placeholder</a></li>
+                <li><a href="https://www.linkedin.com/" rel="noreferrer">LinkedIn placeholder</a></li>
+                <li><a href="https://orcid.org/" rel="noreferrer">ORCID placeholder</a></li>
+              </ul>
+              <ul class="status-list">
+                <li>Use only public professional channels here.</li>
+                <li>Do not publish a street address or phone number.</li>
+              </ul>
+            </article>
+          </section>
+        </div>
+
+        <footer class="window-console">
+          <div class="console-meta">
+            <p class="console-model">active model: <span data-model-status>vicsek flock</span></p>
+            <p class="console-note">type <code>home</code>, <code>about</code>, <code>research</code>, <code>projects</code>, <code>notes</code>, <code>teaching</code>, <code>cv</code>, <code>contact</code>, <code>model flock</code>, <code>model toggle</code>, <code>perturb</code>, or <code>reset</code></p>
+          </div>
+          <div class="terminal-shell" data-terminal-root>
+            <div class="terminal-output" id="terminal-output" role="log" aria-live="polite" aria-relevant="additions text">
+              <p class="terminal-entry terminal-entry-system">
+                <span class="terminal-prefix">system</span>
+                <span>type <code>?</code> or <code>help</code> for available commands</span>
+              </p>
+            </div>
+            <form class="terminal-form" data-terminal-form>
+              <label class="visually-hidden" for="terminal-input">Terminal command input</label>
+              <span class="prompt-line" aria-hidden="true">&gt;</span>
+              <input
+                id="terminal-input"
+                class="terminal-input"
+                name="command"
+                type="text"
+                inputmode="text"
+                autocomplete="off"
+                autocapitalize="none"
+                spellcheck="false"
+                placeholder="type ? for commands"
+                aria-describedby="terminal-help"
+              >
+            </form>
+          </div>
+          <p class="panel-note" id="terminal-help">Commands switch in-window tabs and background states inside this floating terminal.</p>
+          <noscript>
+            <p class="noscript-note">JavaScript is off. The terminal is inactive, but the tab content and page links still work.</p>
+          </noscript>
+        </footer>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

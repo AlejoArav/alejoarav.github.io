@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "almejarav.xyz projects data",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["title", "slug", "summary", "period", "status", "tags", "methods", "technologies", "featured"],
+    "properties": {
+      "title": { "type": "string" },
+      "slug": { "type": "string" },
+      "summary": { "type": "string" },
+      "period": { "type": "string" },
+      "status": {
+        "type": "string",
+        "enum": ["active", "completed", "in-preparation", "planned"]
+      },
+      "tags": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "methods": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "technologies": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "links": {
+        "type": "object",
+        "additionalProperties": { "type": "string" }
+      },
+      "featured": { "type": "boolean" }
+    }
+  }
+}

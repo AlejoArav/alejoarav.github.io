@@ -1,0 +1,26 @@
+[
+  {
+    "title": "What Is Collective Behavior in Biology?",
+    "slug": "what-is-collective-behavior-in-biology",
+    "status": "in-preparation",
+    "summary": "A short note on how local rules, signaling, and physical interactions generate coordinated behavior across cells, microbes, and tissues."
+  },
+  {
+    "title": "Noise as a Biological Control Parameter",
+    "slug": "noise-as-a-biological-control-parameter",
+    "status": "in-preparation",
+    "summary": "A note on why stochasticity is not only a nuisance, but also a mechanism for switching, exploration, and flexible regulation."
+  },
+  {
+    "title": "Reaction-Diffusion Intuition",
+    "slug": "reaction-diffusion-intuition",
+    "status": "in-preparation",
+    "summary": "A conceptual guide to excitable media, activator-inhibitor dynamics, and why simple local rules can create waves and patterns."
+  },
+  {
+    "title": "Quorum Sensing as Distributed Computation",
+    "slug": "quorum-sensing-as-distributed-computation",
+    "status": "in-preparation",
+    "summary": "A note connecting bacterial communication, threshold logic, and population-scale decision-making in spatially extended systems."
+  }
+]

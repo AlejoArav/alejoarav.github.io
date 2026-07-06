@@ -1,0 +1,105 @@
+.terminal-shell {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0.7rem;
+  background: rgba(3, 4, 5, 0.88);
+  padding: 0.7rem 0.9rem 0.9rem;
+}
+
+.terminal-output {
+  min-height: 2.6rem;
+  max-height: 8.4rem;
+  overflow-y: auto;
+  padding-right: 0.2rem;
+}
+
+.terminal-entry {
+  margin: 0 0 0.45rem;
+  color: var(--muted);
+  font-family: var(--mono-font);
+  font-size: 0.9rem;
+  line-height: 1.48;
+}
+
+.terminal-entry:last-child {
+  margin-bottom: 0;
+}
+
+.terminal-entry-user {
+  color: var(--text);
+}
+
+.terminal-entry-system .terminal-prefix,
+.terminal-entry-command .terminal-prefix {
+  color: #58d8ff;
+}
+
+.terminal-entry-link {
+  color: var(--accent);
+}
+
+.terminal-entry-error {
+  color: #e08f87;
+}
+
+.terminal-prefix {
+  margin-right: 0.45rem;
+}
+
+.terminal-link {
+  color: var(--accent);
+}
+
+.terminal-link:hover,
+.terminal-link:focus-visible {
+  color: #ffffff;
+}
+
+.terminal-form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.prompt-line {
+  margin: 0;
+  color: #58d8ff;
+  font-family: var(--mono-font);
+  font-size: 1.02rem;
+}
+
+.terminal-input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  color: var(--muted);
+  background: transparent;
+  font-family: var(--mono-font);
+  font-size: 0.98rem;
+}
+
+.terminal-input::placeholder {
+  color: rgba(143, 148, 155, 0.8);
+}
+
+.terminal-input:focus {
+  outline: none;
+  color: var(--text);
+}
+
+.terminal-input:focus-visible {
+  box-shadow: inset 0 -2px 0 0 #58d8ff;
+}
+
+.panel-note {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.noscript-note {
+  color: var(--accent);
+}

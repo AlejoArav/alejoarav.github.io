@@ -1,0 +1,75 @@
+[
+  {
+    "id": "toggle-lattice",
+    "title": "Toggle lattice",
+    "status": "implemented",
+    "relatedProject": "Lattice-Based Self-Activating Toggle-Switch Model",
+    "intuition": "A spatial field of locally coupled cells can settle into GFP-like, RFP-like, or low-expression patches, then reorganize through noise and neighborhood bias.",
+    "biologicalInterpretation": "A coarse browser sketch of bistable or toggle-like genetic regulation distributed across a communicating population.",
+    "controls": [
+      { "label": "model toggle", "live": true },
+      { "label": "reset", "live": true },
+      { "label": "perturb", "live": true }
+    ]
+  },
+  {
+    "id": "reaction-diffusion",
+    "title": "Reaction-diffusion",
+    "status": "planned",
+    "relatedProject": "Synthetic Genetic Network for Biochemical Noise and Pattern Formation",
+    "intuition": "Short-range activation and slower recovery or inhibition can create traveling fronts, excitable media, and spiral-like structure from simple local rules.",
+    "biologicalInterpretation": "Useful for thinking about wave propagation, morphogen-like signaling, and activator-inhibitor pattern formation in biological media.",
+    "controls": [
+      { "label": "model reaction", "live": false },
+      { "label": "planned next stage", "live": false }
+    ]
+  },
+  {
+    "id": "quorum-sensing",
+    "title": "Quorum sensing",
+    "status": "planned",
+    "relatedProject": "Ising-Like Spatial Patterns in Bacterial Populations",
+    "intuition": "Agents locally contribute to a shared signal field and switch behavior once the accumulated signal crosses a threshold.",
+    "biologicalInterpretation": "A compact way to explain bacterial communication, density-dependent coordination, and distributed decision-making in space.",
+    "controls": [
+      { "label": "model quorum", "live": false },
+      { "label": "signal threshold", "live": false }
+    ]
+  },
+  {
+    "id": "predator-prey",
+    "title": "Predator-prey particles",
+    "status": "planned",
+    "relatedProject": "Open-Source Biotechnology and Molecular Biology Education",
+    "intuition": "Interacting populations can produce spatial chasing fronts, refuges, and cyclical density fluctuations without centralized control.",
+    "biologicalInterpretation": "An ecological collective-behavior sketch for explaining coexistence, pursuit, avoidance, and local environmental pressure.",
+    "controls": [
+      { "label": "planned", "live": false },
+      { "label": "population coupling", "live": false }
+    ]
+  },
+  {
+    "id": "sir-waves",
+    "title": "SIR waves",
+    "status": "planned",
+    "relatedProject": "Open-Source Biotechnology and Molecular Biology Education",
+    "intuition": "Spatial spread models show why local contact structure matters: fronts can stall, accelerate, or fragment even when global averages look simple.",
+    "biologicalInterpretation": "A browser teaching sketch for epidemic propagation, contact structure, and intervention intuition in extended populations.",
+    "controls": [
+      { "label": "planned", "live": false },
+      { "label": "seed outbreak", "live": false }
+    ]
+  },
+  {
+    "id": "ising-lattice",
+    "title": "Ising-like lattice",
+    "status": "planned",
+    "relatedProject": "Ising-Like Spatial Patterns in Bacterial Populations",
+    "intuition": "Local agreement, noise, and weak external fields can shift a system between disordered mixtures and large coherent domains.",
+    "biologicalInterpretation": "A statistical-physics bridge for interpreting switching populations, domain boundaries, and order-disorder transitions in biology.",
+    "controls": [
+      { "label": "planned", "live": false },
+      { "label": "external field", "live": false }
+    ]
+  }
+]

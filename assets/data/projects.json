@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Synthetic Genetic Network for Biochemical Noise and Pattern Formation",
+    "slug": "synthetic-genetic-network-noise-patterns",
+    "summary": "Modeling how stochastic gene-expression fluctuations and local coupling can generate switching fronts, domain formation, and spatially heterogeneous behavior in engineered biological systems.",
+    "period": "2024-present",
+    "status": "active",
+    "tags": ["synthetic biology", "biochemical noise", "pattern formation"],
+    "methods": ["stochastic simulation", "spatial models", "dynamical systems"],
+    "links": {}
+  },
+  {
+    "title": "Mathematical and Computational Modeling of an Optogenetic Circuit",
+    "slug": "optogenetic-circuit-modeling",
+    "summary": "Building quantitative models for light-responsive genetic regulation, with emphasis on parameter inference, controllability, and experimentally interpretable dynamics.",
+    "period": "2024-present",
+    "status": "active",
+    "tags": ["optogenetics", "systems biology", "computational modeling"],
+    "methods": ["ODE models", "parameter estimation", "simulation"],
+    "links": {}
+  },
+  {
+    "title": "Lattice-Based Self-Activating Toggle-Switch Model",
+    "slug": "lattice-self-activating-toggle-switch",
+    "summary": "Exploring how local interactions, stochastic switching, and self-activation can produce collective spatial order in populations of cells carrying toggle-like circuits.",
+    "period": "2023-present",
+    "status": "active",
+    "tags": ["toggle switch", "lattice models", "collective behavior"],
+    "methods": ["cellular lattices", "Monte Carlo intuition", "Canvas simulation"],
+    "links": {}
+  },
+  {
+    "title": "Ising-Like Spatial Patterns in Bacterial Populations",
+    "slug": "ising-like-bacterial-patterns",
+    "summary": "Using statistical-physics ideas to interpret emergent domains, switching boundaries, and order-disorder transitions in communicating biological populations.",
+    "period": "2023-2025",
+    "status": "in-preparation",
+    "tags": ["statistical physics", "bacterial populations", "spatial order"],
+    "methods": ["coarse-grained modeling", "phase-transition intuition", "spatial statistics"],
+    "links": {}
+  },
+  {
+    "title": "Python Microscopy Image-Processing Pipelines",
+    "slug": "python-microscopy-image-pipelines",
+    "summary": "Developing reproducible analysis workflows for microscopy experiments, including segmentation, measurement extraction, quality control, and downstream data integration.",
+    "period": "2022-present",
+    "status": "active",
+    "tags": ["microscopy", "image analysis", "reproducibility"],
+    "methods": ["Python workflows", "segmentation", "data analysis"],
+    "links": {}
+  },
+  {
+    "title": "Open-Source Biotechnology and Molecular Biology Education",
+    "slug": "open-source-biotechnology-education",
+    "summary": "Creating public-facing educational materials that connect molecular biology practice, computational modeling, and accessible scientific communication.",
+    "period": "2022-present",
+    "status": "active",
+    "tags": ["open science", "education", "molecular biology"],
+    "methods": ["teaching design", "documentation", "interactive resources"],
+    "links": {}
+  }
+]
