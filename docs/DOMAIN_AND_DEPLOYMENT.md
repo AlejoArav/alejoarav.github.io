@@ -13,13 +13,13 @@ using GitHub Pages and a GitHub repository.
 ## Selected repository
 
 ```txt
-almejarav.github.io
+AlejoArav/alejoarav.github.io
 ```
 
 This creates a user site at:
 
 ```txt
-https://almejarav.github.io
+https://alejoarav.github.io
 ```
 
 before the custom domain is connected.
@@ -39,7 +39,7 @@ The repository now uses a Vite + TypeScript build and should deploy with GitHub 
 3. Under `Build and deployment`, choose `GitHub Actions`.
 4. Commit the Vite and TypeScript source, public assets, and workflow files.
 5. Push to `main` and wait for the first Pages deployment to complete.
-6. Confirm that the deployed default URL is `https://almejarav.github.io/` before attaching `almejarav.xyz`.
+6. Confirm that the deployed default URL is `https://alejoarav.github.io/` before attaching `almejarav.xyz`.
 
 The workflow in `.github/workflows/deploy-pages.yml` installs dependencies,
 builds the multi-page site into `dist/`, uploads the artifact, and deploys it

@@ -32,19 +32,19 @@ deploys as plain static files.
 Install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 Start the local development server:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Create a production build:
 
 ```bash
-npm run build
+pnpm build
 ```
 
 The production-ready static output is written to `dist/`.
@@ -59,12 +59,12 @@ This site is intended to deploy through GitHub Actions to GitHub Pages.
 The chosen GitHub Pages repository is the user-site repository:
 
 ```txt
-almejarav.github.io
+AlejoArav/alejoarav.github.io
 ```
 
 That means:
 
-- the default published URL is `https://almejarav.github.io/`
+- the default published URL is `https://alejoarav.github.io/`
 - the Vite build can keep the root `/` base path
 - `almejarav.xyz` can later be attached as the custom domain for the same site
 
