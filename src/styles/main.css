@@ -92,12 +92,13 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  width: min(82vw, 1140px);
-  height: min(82vh, 920px);
-  min-height: 38rem;
+  width: min(40vw, 720px);
+  height: min(52vh, 640px);
+  min-height: 28rem;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(5, 6, 8, 0.97), rgba(5, 6, 8, 0.94));
+  background: linear-gradient(180deg, rgba(5, 6, 8, 0.5), rgba(5, 6, 8, 0.5));
+  backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
   overflow: hidden;
   contain: layout paint;
@@ -801,7 +802,8 @@ code {
 
 @media (max-width: 1080px) {
   .terminal-window {
-    width: min(90vw, 1100px);
+    width: min(56vw, 760px);
+    height: min(62vh, 700px);
   }
 }
 
