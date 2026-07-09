@@ -512,6 +512,7 @@
     var stage = document.querySelector(".terminal-stage");
     var windowRoot = document.querySelector("[data-window-root]");
     var dragHandle = document.querySelector("[data-window-drag-handle]");
+    var resizeHandles = Array.prototype.slice.call(document.querySelectorAll("[data-resize-handle]"));
     var tabLinks = Array.prototype.slice.call(document.querySelectorAll("[data-tab-link]"));
     var tabPanels = Array.prototype.slice.call(document.querySelectorAll("[data-tab-panel]"));
     var closeButton = document.querySelector("[data-window-close]");
@@ -532,10 +533,26 @@
       startTop: 0
     };
 
+    var resizeState = {
+      active: false,
+      pointerId: null,
+      handle: null,
+      direction: "",
+      originX: 0,
+      originY: 0,
+      startLeft: 0,
+      startTop: 0,
+      startWidth: 0,
+      startHeight: 0
+    };
+
     var layoutState = {
       left: 0,
       top: 0,
-      hasManualPosition: false
+      width: 0,
+      height: 0,
+      hasManualPosition: false,
+      hasManualSize: false
     };
 
     function getWindowSize() {
@@ -545,17 +562,29 @@
       };
     }
 
-    function setWindowPosition(left, top) {
+    function applyWindowRect(left, top, width, height) {
       var stageRect = stage.getBoundingClientRect();
-      var windowSize = getWindowSize();
-      var maxLeft = Math.max(0, stageRect.width - windowSize.width);
-      var maxTop = Math.max(0, stageRect.height - Math.max(windowSize.height, 52));
+      var minWidth = Math.min(320, stageRect.width);
+      var minHeight = Math.min(260, stageRect.height);
+      var resolvedWidth = clamp(width, minWidth, stageRect.width);
+      var resolvedHeight = clamp(height, minHeight, stageRect.height);
+      var maxLeft = Math.max(0, stageRect.width - resolvedWidth);
+      var maxTop = Math.max(0, stageRect.height - Math.max(resolvedHeight, 52));
 
       layoutState.left = clamp(left, 0, maxLeft);
       layoutState.top = clamp(top, 0, maxTop);
+      layoutState.width = resolvedWidth;
+      layoutState.height = resolvedHeight;
 
+      windowRoot.style.width = layoutState.width + "px";
+      windowRoot.style.height = layoutState.height + "px";
       windowRoot.style.left = layoutState.left + "px";
       windowRoot.style.top = layoutState.top + "px";
+    }
+
+    function setWindowPosition(left, top) {
+      var windowSize = getWindowSize();
+      applyWindowRect(left, top, windowSize.width, windowSize.height);
     }
 
     function centerWindow() {
@@ -567,7 +596,7 @@
       var windowSize = getWindowSize();
       var left = (stageRect.width - windowSize.width) * 0.5;
       var top = Math.max(18, Math.min(42, stageRect.height * 0.06));
-      setWindowPosition(left, top);
+      applyWindowRect(left, top, windowSize.width, windowSize.height);
     }
 
     function setWindowState() {
@@ -584,6 +613,17 @@
       windowRoot.classList.remove("is-minimized");
       windowRoot.classList.remove("is-maximized");
       setWindowState();
+
+      if (layoutState.hasManualPosition || layoutState.hasManualSize) {
+        applyWindowRect(
+          layoutState.left,
+          layoutState.top,
+          layoutState.width || getWindowSize().width,
+          layoutState.height || getWindowSize().height
+        );
+        return;
+      }
+
       centerWindow();
     }
 
@@ -641,6 +681,39 @@
       );
     }
 
+    function onResizePointerMove(event) {
+      if (!resizeState.active || event.pointerId !== resizeState.pointerId) {
+        return;
+      }
+
+      var deltaX = event.clientX - resizeState.originX;
+      var deltaY = event.clientY - resizeState.originY;
+      var nextLeft = resizeState.startLeft;
+      var nextTop = resizeState.startTop;
+      var nextWidth = resizeState.startWidth;
+      var nextHeight = resizeState.startHeight;
+
+      if (resizeState.direction.indexOf("e") !== -1) {
+        nextWidth = resizeState.startWidth + deltaX;
+      }
+
+      if (resizeState.direction.indexOf("s") !== -1) {
+        nextHeight = resizeState.startHeight + deltaY;
+      }
+
+      if (resizeState.direction.indexOf("w") !== -1) {
+        nextWidth = resizeState.startWidth - deltaX;
+        nextLeft = resizeState.startLeft + deltaX;
+      }
+
+      if (resizeState.direction.indexOf("n") !== -1) {
+        nextHeight = resizeState.startHeight - deltaY;
+        nextTop = resizeState.startTop + deltaY;
+      }
+
+      applyWindowRect(nextLeft, nextTop, nextWidth, nextHeight);
+    }
+
     function endDrag(event) {
       if (!dragState.active) {
         return;
@@ -660,6 +733,32 @@
           // Ignore capture release failures after layout state changes.
         }
       }
+    }
+
+    function endResize(event) {
+      if (!resizeState.active) {
+        return;
+      }
+
+      if (event && event.pointerId !== undefined && event.pointerId !== resizeState.pointerId) {
+        return;
+      }
+
+      if (
+        resizeState.handle &&
+        typeof resizeState.handle.releasePointerCapture === "function" &&
+        event
+      ) {
+        try {
+          resizeState.handle.releasePointerCapture(event.pointerId);
+        } catch (error) {
+          // Ignore capture release failures after layout state changes.
+        }
+      }
+
+      resizeState.active = false;
+      resizeState.pointerId = null;
+      resizeState.handle = null;
     }
 
     tabLinks.forEach(function (link) {
@@ -694,6 +793,39 @@
     dragHandle.addEventListener("pointermove", onPointerMove);
     dragHandle.addEventListener("pointerup", endDrag);
     dragHandle.addEventListener("pointercancel", endDrag);
+
+    resizeHandles.forEach(function (handle) {
+      handle.addEventListener("pointerdown", function (event) {
+        if (windowRoot.classList.contains("is-maximized") || windowRoot.classList.contains("is-minimized")) {
+          return;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        var windowSize = getWindowSize();
+        resizeState.active = true;
+        resizeState.pointerId = event.pointerId;
+        resizeState.handle = handle;
+        resizeState.direction = handle.getAttribute("data-resize-handle") || "";
+        resizeState.originX = event.clientX;
+        resizeState.originY = event.clientY;
+        resizeState.startLeft = layoutState.left;
+        resizeState.startTop = layoutState.top;
+        resizeState.startWidth = windowSize.width;
+        resizeState.startHeight = windowSize.height;
+        layoutState.hasManualPosition = true;
+        layoutState.hasManualSize = true;
+
+        if (typeof handle.setPointerCapture === "function") {
+          handle.setPointerCapture(event.pointerId);
+        }
+      });
+
+      handle.addEventListener("pointermove", onResizePointerMove);
+      handle.addEventListener("pointerup", endResize);
+      handle.addEventListener("pointercancel", endResize);
+    });
 
     if (closeButton) {
       closeButton.addEventListener("click", function () {
@@ -739,8 +871,13 @@
         return;
       }
 
-      if (layoutState.hasManualPosition) {
-        setWindowPosition(layoutState.left, layoutState.top);
+      if (layoutState.hasManualPosition || layoutState.hasManualSize) {
+        applyWindowRect(
+          layoutState.left,
+          layoutState.top,
+          layoutState.width || getWindowSize().width,
+          layoutState.height || getWindowSize().height
+        );
         return;
       }
 

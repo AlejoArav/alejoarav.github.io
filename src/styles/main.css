@@ -102,6 +102,7 @@ a {
   box-shadow: var(--shadow);
   overflow: hidden;
   contain: layout paint;
+  container-type: inline-size;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
   transition:
@@ -139,8 +140,8 @@ a {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 1rem;
-  min-height: 4.5rem;
-  padding: 0 1.15rem;
+  min-height: 3.7rem;
+  padding: 0 0.95rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   cursor: grab;
   user-select: none;
@@ -184,7 +185,7 @@ a {
   gap: 0.85rem;
   justify-self: start;
   color: var(--muted);
-  font-size: clamp(1rem, 1.45vw, 1.25rem);
+  font-size: clamp(0.72rem, 2.1cqi, 0.9rem);
   font-weight: 600;
 }
 
@@ -195,19 +196,19 @@ a {
 
 .chrome-draghint {
   color: rgba(143, 148, 155, 0.66);
-  font-size: 0.78rem;
+  font-size: 0.58rem;
 }
 
 .window-layout {
   display: grid;
-  grid-template-columns: 9.5rem minmax(0, 1fr);
+  grid-template-columns: 7.6rem minmax(0, 1fr);
   gap: 0;
   min-height: 0;
   height: 100%;
 }
 
 .window-sidebar {
-  padding: 1.25rem 0 0 1.35rem;
+  padding: 0.95rem 0 0 1rem;
   min-height: 0;
   overflow: hidden;
 }
@@ -230,12 +231,12 @@ code {
 .window-nav-link {
   display: inline-flex;
   align-items: center;
-  min-height: 2.25rem;
-  padding: 0 0.9rem;
+  min-height: 1.85rem;
+  padding: 0 0.72rem;
   width: fit-content;
   color: var(--muted);
   text-decoration: none;
-  font-size: clamp(0.98rem, 1.5vw, 1.15rem);
+  font-size: clamp(0.68rem, 2.2cqi, 0.82rem);
   letter-spacing: 0.01em;
 }
 
@@ -256,8 +257,8 @@ code {
 }
 
 .sidebar-meta {
-  margin-top: 1.6rem;
-  padding-right: 1rem;
+  margin-top: 1.1rem;
+  padding-right: 0.8rem;
 }
 
 .eyebrow,
@@ -273,12 +274,12 @@ code {
 .sidebar-copy {
   margin: 0.5rem 0 0;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.62rem;
   line-height: 1.5;
 }
 
 .window-content {
-  padding: 1rem 1.65rem 1.4rem 0.6rem;
+  padding: 0.8rem 1rem 1rem 0.3rem;
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -304,7 +305,7 @@ code {
 }
 
 .display-wordmark {
-  font-size: clamp(4rem, 11vw, 9.6rem);
+  font-size: clamp(2.6rem, 14cqi, 6rem);
   line-height: 0.86;
   letter-spacing: -0.06em;
   color: rgba(239, 232, 219, 0.93);
@@ -315,21 +316,21 @@ code {
 }
 
 .lead {
-  margin: 1.4rem 0 0.9rem;
+  margin: 1rem 0 0.7rem;
   color: rgba(239, 232, 219, 0.92);
-  font-size: clamp(1rem, 1.75vw, 1.2rem);
+  font-size: clamp(0.72rem, 2.7cqi, 0.92rem);
 }
 
 .tab-panel p {
   max-width: 66ch;
   color: rgba(239, 232, 219, 0.94);
-  font-size: clamp(0.98rem, 1.45vw, 1.12rem);
-  line-height: 1.6;
+  font-size: clamp(0.7rem, 2.35cqi, 0.88rem);
+  line-height: 1.5;
 }
 
 .tab-panel h2 {
-  font-size: clamp(1.4rem, 2.4vw, 2rem);
-  margin-bottom: 0.85rem;
+  font-size: clamp(1rem, 4cqi, 1.4rem);
+  margin-bottom: 0.65rem;
 }
 
 .tab-section + .tab-section {
@@ -380,8 +381,80 @@ code {
 }
 
 .window-console {
-  padding: 1rem 1.35rem 1.1rem;
+  padding: 0.8rem 1rem 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.window-resize-handle {
+  position: absolute;
+  z-index: 3;
+  touch-action: none;
+}
+
+.window-resize-handle-n,
+.window-resize-handle-s {
+  left: 1rem;
+  right: 1rem;
+  height: 0.8rem;
+}
+
+.window-resize-handle-e,
+.window-resize-handle-w {
+  top: 1rem;
+  bottom: 1rem;
+  width: 0.8rem;
+}
+
+.window-resize-handle-n {
+  top: 0;
+  cursor: ns-resize;
+}
+
+.window-resize-handle-ne {
+  top: 0;
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+  cursor: nesw-resize;
+}
+
+.window-resize-handle-e {
+  right: 0;
+  cursor: ew-resize;
+}
+
+.window-resize-handle-se {
+  right: 0;
+  bottom: 0;
+  width: 1rem;
+  height: 1rem;
+  cursor: nwse-resize;
+}
+
+.window-resize-handle-s {
+  bottom: 0;
+  cursor: ns-resize;
+}
+
+.window-resize-handle-sw {
+  left: 0;
+  bottom: 0;
+  width: 1rem;
+  height: 1rem;
+  cursor: nesw-resize;
+}
+
+.window-resize-handle-w {
+  left: 0;
+  cursor: ew-resize;
+}
+
+.window-resize-handle-nw {
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  cursor: nwse-resize;
 }
 
 .console-meta {
@@ -819,7 +892,7 @@ code {
   }
 
   .window-sidebar {
-    padding: 1rem 1rem 0;
+    padding: 0.8rem 0.85rem 0;
   }
 
   .window-nav {
@@ -828,7 +901,7 @@ code {
   }
 
   .window-content {
-    padding: 0.8rem 1rem 1.2rem;
+    padding: 0.7rem 0.85rem 1rem;
   }
 
   .content-grid,
@@ -843,7 +916,7 @@ code {
 
 @media (max-width: 640px) {
   .display-wordmark {
-    font-size: clamp(2.9rem, 18vw, 5.2rem);
+    font-size: clamp(2.1rem, 16vw, 4rem);
   }
 
   .mini-grid {
