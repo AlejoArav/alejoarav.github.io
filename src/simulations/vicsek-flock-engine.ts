@@ -119,7 +119,7 @@
     this.rows = Math.max(1, Math.ceil(this.pixelHeight / this.cellSize));
     this.cellCount = this.columns * this.rows;
 
-    this.allocateState(600, this.cellCount);
+    this.allocateState(150, this.cellCount);
     this.seedField();
   };
 
